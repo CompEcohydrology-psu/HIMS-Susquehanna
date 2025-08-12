@@ -1,0 +1,21 @@
+#!/bin/bash 
+#SBATCH --nodes=1 
+#SBATCH --ntasks=1 
+#SBATCH --mem=2GB 
+#SBATCH --time=05:00:00 
+#SBATCH --partition=open 
+
+
+
+# Get started
+echo "Job started on 'hostname' at 'date'"
+
+# Go to the correct place
+cd $SLURM_SUBMIT_DIR
+
+# Run the job itself
+./swat670.exe
+
+# Finish up
+echo "Job Ended  at 'date'"
+"
