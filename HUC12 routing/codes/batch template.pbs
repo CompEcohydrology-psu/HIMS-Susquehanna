@@ -1,0 +1,24 @@
+#!/bin/bash 
+#SBATCH --nodes=1 
+#SBATCH --ntasks=1 
+#SBATCH --mem=10GB 
+#SBATCH --time=05:00:00 
+#SBATCH --partition=open 
+
+
+
+# Get started
+echo "Job started on 'hostname' at 'date'"
+
+
+module load r/4.2.1-gcc-8.5.0
+
+# Go to the correct place
+cd $SLURM_SUBMIT_DIR
+
+# Run the job itself
+R <  Routing_reg_HUC12.R --no-save
+
+# Finish up
+echo "Job Ended  at 'date'"
+"
